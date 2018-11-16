@@ -1,5 +1,5 @@
 
-idx_bt1: /scratch/genomic_med/apps/annot/indexes/bowtie/hg19
+idx_bt1: /sandbox/shares/ecn/genome/hg38 
 macs_g: hs
 macs_pvalue: 1e-5
 macs2_g: hs
@@ -8,14 +8,24 @@ macs2_pvalue_broad: 1e-5
 
 control: 'Input'
 #superEnhancer genome
-rose_g: hg19
+rose_g: hg38
 
 #number of reads downsample to, I set to 50 million, if reads number smaller than
 ## 50 million, downsample will keep the orignal reads
 target_reads: 50000000
 
+LILY: True
+lily:
+  hmcan-exe: /sandbox/shares/ecn/ATAC_H3K27AC_Jin/pyflow-ChIPseq/utils/hmcan/src/HMCan
+  hmcan-config: /sandbox/shares/ecn/ATAC_H3K27AC_Jin/pyflow-ChIPseq/HMCan.config.broad.txt
+  lily-R: /sandbox/shares/ecn/ATAC_H3K27AC_Jin/pyflow-ChIPseq/utils/LILY/scripts/runLILY.R
+  chrom_sizes: /sandbox/shares/ecn/genome/hg38.chrom.sizes
+  refseq: /sandbox/shares/ecn/genome/hg38_refseq.ucsc
+  freec: /sandbox/shares/ecn/ATAC_H3K27AC_Jin/pyflow-ChIPseq/utils/FREEC-11.4/scripts/makeGraph.R
+prefix: /sandbox/shares/ecn/ATAC_H3K27AC_Jin/pyflow-ChIPseq/
+
 ## run chromHMM or not
-chromHMM: True
+chromHMM: False
 
 ##chromHMM bin size
 binsize: 200
